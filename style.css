@@ -309,6 +309,69 @@ nav ul li a:hover::after{
   .publication-item p strong {
     color: #ffffff;
   }
+
+
+  /* -------- featured media -------- */
+#media{
+  padding: 50px 0;
+  background-color: #20272F; /* same family as projects/publications */
+}
+
+.media-list{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+.media-card{
+  display: grid;
+  gap: 10px;
+  background: #262626;
+  border-radius: 15px;
+  padding: 24px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.media-card:hover{
+  background: #2b2b2b;
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.media-meta{
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.8);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.media-dot{ opacity: .6; }
+
+#media h3{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.media-more{
+  font-size: 12px;
+  opacity: .9;
+  margin-top: 6px;
+}
+
+.media-card:hover .media-more{
+  color: #ff004f;
+}
 /* -------- contact ------ */
   #contact {
     background-color: #DDDDDD;
