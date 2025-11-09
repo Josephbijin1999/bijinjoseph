@@ -49,9 +49,9 @@ body {
   }
   .bijin { color: red; }
 
-.container {
+/* .container {
     padding: 0px 10%;
-}
+} */
 
 nav{
     display: flex;
@@ -223,6 +223,40 @@ nav ul li a:hover::after{
 .projects-list div:hover{
     background: #ff004f;
     transform: translateY(-10px);
+}
+/* Make the anchor render like the current cards */
+.projects-list .project-card {
+  display: grid;
+  background: #262626;
+  padding: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: background 0.5s, transform 0.5s;
+}
+
+.projects-list .project-card:hover {
+  background: #ff004f;
+  transform: translateY(-10px);
+}
+
+.projects-list .project-card i {
+  font-size: 50px;
+}
+
+.projects-list .project-card h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.projects-list .project-card .more {
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
 }
 /* ---------publications--------- */
 
