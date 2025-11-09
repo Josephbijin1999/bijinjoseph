@@ -105,7 +105,9 @@ nav ul li a:hover::after{
 }
 
 /* ------ about----- */
-
+@media (min-width: 841px) {
+  .about-photo { margin-top: 80px; }
+}
 #about{
    padding: 150px 0 100px;
    color: #ababab;
