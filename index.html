@@ -30,6 +30,7 @@
 
 </head>
 <body>
+<div id="backdrop" class="backdrop" onclick="closemenu()"></div>
 <div id = 'header'>
     <div id="particles-js"></div>
     <div class="container">
@@ -47,6 +48,7 @@
                 <i class="fa-solid fa-xmark" onclick = "closemenu()"></i>
 
             </ul>
+            
             <i class="fa-solid fa-bars" onclick = "openmenu()"></i>
           </nav>
           <div class="header-text">
@@ -218,20 +220,7 @@
 
 </script>
 
-<script>
 
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
-        sidemenu.style.right ="0";
-
-    }
-
-    function closemenu(){
-        sidemenu.style.right ="-200px";
-        
-    }
-</script>
 <script>
     particlesJS("particles-js", {
       "particles": {
@@ -295,6 +284,39 @@
       "retina_detect": true
     });
     </script>
+<script>
+  (function () {
+    const sidemenu = document.getElementById("sidemenu");
+    const backdrop = document.getElementById("backdrop");
 
+    // expose to inline onclick handlers
+    window.openmenu = function () {
+      sidemenu.style.right = "0";
+      backdrop.classList.add("show");
+      document.body.classList.add("menu-open");
+    };
+
+    window.closemenu = function () {
+      sidemenu.style.right = "-200px";
+      backdrop.classList.remove("show");
+      document.body.classList.remove("menu-open");
+    };
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") window.closemenu();
+    });
+  })();
+</script>
+
+<script>
+  
+  document.querySelectorAll('#sidemenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 840px)').matches) {
+        closemenu();   // uses your existing function
+      }
+    });
+  });
+</script>
 </body>
 </html>

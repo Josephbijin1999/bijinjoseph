@@ -49,9 +49,9 @@ body {
   }
   .bijin { color: red; }
 
-/* .container {
+.container {
     padding: 0px 10%;
-} */
+}
 
 nav{
     display: flex;
@@ -462,3 +462,21 @@ nav ul .fa-solid{
     
   }
 }
+/* Backdrop above content, below the menu */
+
+@media (max-width:840px){
+  nav ul{
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    background:#ff004f;
+    transition: right .5s;
+    z-index: 10000;       /* above the backdrop */
+  }
+}
+/* When menu is open */
+.backdrop.show{ opacity: 1; pointer-events: auto; }
+body.menu-open{ overflow: hidden; }   /* stop background scroll */
